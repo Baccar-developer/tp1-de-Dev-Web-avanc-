@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+  version="6.1"
+  metadata-complete="true">
+
+  <display-name>TP1</display-name>
+
+  <welcome-file-list>
+    <welcome-file>form.html</welcome-file>
+  </welcome-file-list>
+  <!-- configuration des classes de servlet-->
+<servlet>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>FormServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>CookieServlet</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>showSession</servlet-name>
+    <servlet-class>showSession</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>ListItems</servlet-name>
+    <servlet-class>ListItems</servlet-class>
+</servlet>
+<!-- configuration des addresses des servlet-->
+
+<servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/FormServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/Form_Servlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/CookieServlet</url-pattern>
+</servlet-mapping>
+    
+<servlet-mapping>
+    <servlet-name>showSession</servlet-name>
+    
+    <url-pattern>/showSession</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ListItems</servlet-name>
+    
+    <url-pattern>/ListItems</url-pattern>
+</servlet-mapping>
+  </web-app>
