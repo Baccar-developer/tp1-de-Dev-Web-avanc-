@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Person Form</title>
+</head>
+<body>
+    <h2>Enter a person</h2>
+
+    <form action="Controller" method="post">
+        <p>
+            <label>First name:
+                <input type="text" name="firstName" required>
+            </label>
+        </p>
+        <p>
+            <label>Last name:
+                <input type="text" name="lastName" required>
+            </label>
+        </p>
+        <p>
+            <label>Birth date (mm/dd/yyyy):
+                <input type="text" name="birthDay"
+                       placeholder="mm/dd/yyyy" required>
+            </label>
+        </p>
+        <p>
+            Sex:
+            <label><input type="radio" name="sex" value="M" required> Male</label>
+            <label><input type="radio" name="sex" value="F"> Female</label>
+        </p>
+        <p><input type="submit" value="Send"></p>
+    </form>
+</body>
+</html>

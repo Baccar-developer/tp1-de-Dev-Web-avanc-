@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+  version="6.1"
+  metadata-complete="true">
+
+  <display-name>TP1</display-name>
+
+  <welcome-file-list>
+    <welcome-file>form.html</welcome-file>
+    <welcome-file>form_jsp.html</welcome-file>
+  </welcome-file-list>
+  <!-- configuration des classes de servlet-->
+<servlet>
+    <servlet-name>FormServlet</servlet-name>
+    <servlet-class>FormServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>CookieServlet</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>showSession</servlet-name>
+    <servlet-class>showSession</servlet-class>
+</servlet>
+
+<servlet>
+    <servlet-name>ListItems</servlet-name>
+    <servlet-class>ListItems</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>Controller</servlet-name>
+    <servlet-class>isep.lab.mvc.controller.Controller</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+</servlet>
+
+
+<!-- configuration des addresses des servlet-->
+
+<servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/FormServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>FormServlet</servlet-name>
+    <url-pattern>/Form_Servlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/CookieServlet</url-pattern>
+</servlet-mapping>
+    
+<servlet-mapping>
+    <servlet-name>showSession</servlet-name>
+    
+    <url-pattern>/showSession</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ListItems</servlet-name>
+    
+    <url-pattern>/ListItems</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>Controller</servlet-name>
+    <url-pattern>/Controller</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
+
+<filter>
+    <filter-name>LoggingFilter</filter-name>
+    <filter-class>LoggingFilter</filter-class>
+    <init-param>
+        <param-name>logPrefix</param-name>
+        <param-value>[LOG]</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>LoggingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+<filter>
+    <filter-name>SecurityFilter</filter-name>
+    <filter-class>SecurityFilter</filter-class>
+    
+</filter>
+<filter-mapping>
+    <filter-name>SecurityFilter</filter-name>
+    <url-pattern>/ListItems</url-pattern>
+</filter-mapping>
+
+<listener>
+    <listener-class>listeners.ActiveSessionListener</listener-class>
+</listener>
+<listener>
+    <listener-class>listeners.ApplicationListener</listener-class>
+</listener>
+<listener>
+    <listener-class>listeners.RequestListener</listener-class>
+</listener>
+<listener>
+    <listener-class>listeners.SessionAttributeListener</listener-class>
+</listener>
+
+  </web-app>
